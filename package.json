@@ -1,5 +1,5 @@
 {
-  "name": "layer-control",
+  "name": "mapbox-gl-layer-control",
   "version": "0.0.0",
   "description": "Vue element for a Mapbox GL layer control",
   "jsnext": "dist/bundle.js",
