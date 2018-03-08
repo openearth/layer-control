@@ -26,13 +26,13 @@ Vue element for a Mapbox GL layer control
 
 ### Installation
 ```
-npm install --save layer-control
+npm install --save mapbox-gl-layer-control
 ```
 
 ### Usage
 
 ``` javascript
-import LayerControl from 'layer-control'
+import LayerControl from 'mapbox-gl-layer-control'
 Vue.use(LayerControl)
 ```
 and then in your Vue file
