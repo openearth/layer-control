@@ -1,10 +1,8 @@
-import { expect } from 'chai'
-import { shallow } from '@vue/test-utils'
-import LayerControl from '../src/LayerControl.vue'
+import LayerControl from '../src/components/LayerControl.vue'
+import test from '@vue/test-utils'
 
 describe('LayerControl.vue', () => {
   it('is created', () => {
-    const wrapper = shallow(LayerControl)
-    expect(wrapper.find('div'))
+    // const wrapper = shallow(LayerControl)
   })
 })
