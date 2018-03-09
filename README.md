@@ -8,7 +8,7 @@ Vue element for a Mapbox GL layer control
     <img src="https://coveralls.io/repos/github/openearth/layer-control/badge.svg?branch=master&style=flat-square" alt="Coverage Status" />
   </a>
   <a href="LICENSE">
-    <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License" />
+    <img src="https://img.shields.io/badge/license-GPLv3-brightgreen.svg?style=flat-square" alt="Software License" />
   </a>
   <a href="https://npmjs.org/package/layer-control">
     <img src="https://img.shields.io/npm/v/layer-control.svg?style=flat-square" alt="Packagist" />
