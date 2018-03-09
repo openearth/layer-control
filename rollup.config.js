@@ -1,8 +1,7 @@
 import vue from 'rollup-plugin-vue'
-import buble from 'rollup-plugin-buble'
+import babel from 'rollup-plugin-babel'
 import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
-import { rollup } from 'rollup'
 import { name } from './package.json'
 
 function camelize(name) {
@@ -13,18 +12,24 @@ function camelize(name) {
 const config = {
   input: 'src/main.js',
   output: [
+    // es6 module format
     { format: 'es', file: `dist/${name}.js` },
+    // commonjs module format (for require?)
     { format: 'cjs', file: `dist/${name}.common.js` },
+    // global variable (camel case version of package.json name)
     { format: 'iife', file: `dist/${name}.min.js`, name: camelize(name) }
   ],
   plugins: [
-    vue(),
-    buble(),
+    vue({
+      css: `dist/${name}.css`
+    }),
+    babel(),
     resolve({
       jsnext: true,
       main: true,
       browser: true
     }),
+    // convert commonjs to es6
     commonjs()
 
   ]
