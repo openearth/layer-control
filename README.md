@@ -3,9 +3,7 @@
 Vue element for a Mapbox GL layer control
 
 <p align="center">
-  <a href="https://circleci.com/gh/openearth/layer-control">
-    <img src="https://circleci.com/gh/openearth/layer-control.svg?style=svg" alt="Build Status" />
-  </a>
+  [![Build Status](https://travis-ci.org/openearth/layer-control.svg?branch=master)](https://travis-ci.org/openearth/layer-control)
   <a href="https://coveralls.io/github/openearth/layer-control?branch=master">
     <img src="https://coveralls.io/repos/github/openearth/layer-control/badge.svg?branch=master&style=flat-square" alt="Coverage Status" />
   </a>
