@@ -3,47 +3,31 @@ import buble from 'rollup-plugin-buble'
 import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import { rollup } from 'rollup'
-import clone from 'lodash/cloneDeep'
+import { name } from './package.json'
 
-import { default as vueConfig, pack } from './config/rollup-plugin-vue.config'
-import bubleConfig from './config/buble.config'
-
-let cache
-
-const config = {
-  entry: 'src/main.js',
-  targets: [
-    { format: 'es', dest: `dist/${pack.name}.js` },
-    { format: 'cjs', dest: `dist/${pack.name}.common.js` }
-  ],
-  plugins: [
-    vue(vueConfig),
-    buble(bubleConfig)
-  ],
-  useStrict: false,
-  cache
+function camelize(name) {
+  // replace -letter by Letter
+  return name.replace(/-([a-z])/g, g => g[1].toUpperCase())
 }
 
-// --- DO NOT CHANGE BEYOND THIS ---
-if (vueConfig.standalone) {
-  const options = clone(config)
-
-  options.entry = 'src/install.js'
-  options.targets = []
-  options.plugins = [
+const config = {
+  input: 'src/main.js',
+  output: [
+    { format: 'es', file: `dist/${name}.js` },
+    { format: 'cjs', file: `dist/${name}.common.js` },
+    { format: 'iife', file: `dist/${name}.min.js`, name: camelize(name) }
+  ],
+  plugins: [
+    vue(),
+    buble(),
     resolve({
       jsnext: true,
       main: true,
       browser: true
     }),
     commonjs()
-  ].concat(options.plugins)
 
-  rollup(options).then((bundle) => bundle.write({
-    format: 'iife',
-    dest: `dist/${pack.name}.min.js`,
-    moduleName: pack.name
-  }))
+  ]
 }
 
 export default config
