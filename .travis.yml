@@ -1,5 +1,7 @@
 language: node_js
 node_js:
   - node
+# required for running chrome test runner
+sudo: required
 addons:
     chrome: stable
