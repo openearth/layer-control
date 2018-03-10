@@ -16,7 +16,8 @@
     "compile": "rollup -c",
     "build": "npm run purge && npm run compile",
     "lint": "eslint src/* test/*",
-    "beforePublish": "npm run lint && npm run build"
+    "beforePublish": "npm run lint && npm run build",
+    "test": "karma start --single-run"
   },
   "files": [
     "dist/",
@@ -25,6 +26,7 @@
   "author": "Fedor Baart <fedor.baart@deltares.nl>",
   "license": "GPL-3.0",
   "dependencies": {
+    "lodash": "^4.17.5",
     "vue": "latest"
   },
   "devDependencies": {
@@ -35,6 +37,7 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-2": "^6.24.1",
+    "chai": "^4.1.2",
     "eslint": "^4.18.2",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-html": "^4.0.2",
@@ -42,6 +45,11 @@
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
+    "karma": "^2.0.0",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-mocha": "^1.3.0",
+    "karma-rollup-preprocessor": "^5.1.1",
     "node-sass": "^4.7.2",
     "parse5": "^2.2.3",
     "rollup": "^0.56.5",

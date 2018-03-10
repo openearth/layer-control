@@ -1,8 +1,8 @@
 import LayerControl from '../src/components/LayerControl.vue'
-import test from '@vue/test-utils'
+import _ from 'lodash'
 
 describe('LayerControl.vue', () => {
   it('is created', () => {
-    // const wrapper = shallow(LayerControl)
+    expect(LayerControl.created)
   })
 })
